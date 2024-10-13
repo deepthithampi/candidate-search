@@ -34,25 +34,25 @@ const SavedCandidates: React.FC = () => {
               <th className="p-3 text-left">Reject</th>
             </tr>
           </thead>
-          <tbody>
-            {candidates.map((candidate, index) => (
+          <tbody className="tbody ">
+            {candidates.map((candidate) => (
               <tr key={candidate.id} >
-                <td className="tbody ">
+                <td >
                   <img src={candidate.avatar_url} alt={candidate.login} />
                 </td>
-                <td className="tbody">
+                <td >
                   <div>{candidate.name || candidate.login}</div>
                   <div >({candidate.login})</div>
                 </td>
-                <td className="tbody ">{candidate.location || 'Not specified'}</td>
-                <td className="tbody ">
+                <td >{candidate.location || 'Not specified'}</td>
+                <td >
                   <a href={`mailto:${candidate.email}`} >
                     {candidate.email || 'Not available'}
                   </a>
                 </td>
-                <td className="tbody ">{candidate.company || 'Not specified'}</td>
-                <td className="tbody ">{candidate.bio || 'No bio available'}</td>
-                <td className="tbody ">
+                <td >{candidate.company || 'Not specified'}</td>
+                <td >{candidate.bio || 'No bio available'}</td>
+                <td >
                   <button className="remove-button"
                     onClick={() => handleRemoveCandidate(candidate.id)}
                   >
