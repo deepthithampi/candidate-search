@@ -61,37 +61,37 @@ const CandidateSearch: React.FC = () => {
     <main>
       
       <h1>Candidate Search</h1>
-      <p>Click on the desired candidate to add or remove</p>
-      <div className="content">
-        <div className="candidate-list">
-          {candidates.map((candidate) => (
-            <div
-              key={candidate.id}
-              className="candidate-item"
-              onClick={() => handleCandidateClick(candidate.login)}
-            >
-              <img src={candidate.avatar_url} alt={candidate.login} />
-              <div className="candidate-info">
-                <h3>{candidate.login}</h3>
-                <p>{candidate.html_url}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        {selectedCandidate && (
-          <div className="candidate-details">
-            <img src={selectedCandidate.avatar_url} alt={selectedCandidate.login} />
-            <h2>{selectedCandidate.name || selectedCandidate.login}</h2>
-            <p>Location: {selectedCandidate.location || 'Not specified'}</p>
-            <p>Email: {selectedCandidate.email || 'Not available'}</p>
-            <p>Company: {selectedCandidate.organizations_url|| 'Not specified'}</p>
-            <div className="button-group">
-              <button onClick={handleRemoveCandidate} className="remove-button">-</button>
-              <button onClick={handleAddCandidate} className="add-button">+</button>
+      <h3 className='h3-candidate-search'>Click on the desired candidate's avatar to add or remove</h3>
+    <div className="content">
+      <div className="candidate-list">
+        {candidates.map((candidate) => (
+          <div
+            key={candidate.id}
+            className="candidate-item"
+            onClick={() => handleCandidateClick(candidate.login)}
+          >
+            <img src={candidate.avatar_url} alt={candidate.login} />
+            <div className="candidate-info">
+              <h3>{candidate.login}</h3>
+              <p>{candidate.html_url}</p>
             </div>
           </div>
-        )}
+        ))}
       </div>
+      {selectedCandidate && (
+        <div className="candidate-details">
+          <img src={selectedCandidate.avatar_url} alt={selectedCandidate.login} />
+          <h2>{selectedCandidate.name || selectedCandidate.login}</h2>
+          <p>Location: {selectedCandidate.location || 'Not specified'}</p>
+          <p>Email: {selectedCandidate.email || 'Not available'}</p>
+          <p>Company: {selectedCandidate.organizations_url|| 'Not specified'}</p>
+          <div className="button-group">
+            <button onClick={handleRemoveCandidate} className="remove-button">-</button>
+            <button onClick={handleAddCandidate} className="add-button">+</button>
+          </div>
+        </div>
+      )}
+    </div>
     </main>
   );
 };

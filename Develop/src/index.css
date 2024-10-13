@@ -194,8 +194,42 @@ tbody tr:nth-child(odd) {
 
 .remove-button {
   background-color: #ff4136;
+  color: white;
 }
 
 .add-button {
   background-color: #2ecc40;
+  color: white;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left; 
+  border-bottom: 1px solid #444;
+}
+
+tr {
+  border-radius: 10px;
+  background-color: #000; /* Default row color */
+  color: white;
+}
+.tbody img {
+  width: 50px; 
+  height: auto; 
+  border-radius: 50%; 
+}
+
+.text-center {
+  text-align: center; 
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+.text-xl {
+  font-size: 1.25rem; 
+}
+
+.h3-candidate-search{
+  color: #c5cfa2;
 }
