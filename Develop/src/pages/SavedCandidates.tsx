@@ -66,7 +66,7 @@ const SavedCandidates: React.FC = () => {
       </div>
       
       {candidates.length === 0 && (
-        <p className="text-center mt-8 text-xl">No Candidates Yet</p>
+        <p>No Candidates Yet</p>
       )}
     </main>
   );
