@@ -25,13 +25,13 @@ const SavedCandidates: React.FC = () => {
         <table className="table">
           <thead>
             <tr className="tr">
-              <th className="p-3 text-left">Image</th>
-              <th className="p-3 text-left">Name</th>
-              <th className="p-3 text-left">Location</th>
-              <th className="p-3 text-left">Email</th>
-              <th className="p-3 text-left">Company</th>
-              <th className="p-3 text-left">Bio</th>
-              <th className="p-3 text-left">Reject</th>
+              <th >Image</th>
+              <th >Name</th>
+              <th >Location</th>
+              <th >Email</th>
+              <th >Company</th>
+              <th >Bio</th>
+              <th >Reject</th>
             </tr>
           </thead>
           <tbody className="tbody ">
