@@ -18,34 +18,56 @@ const SavedCandidates: React.FC = () => {
   };
 
   return (
-    <main>
-     
-      <h1>Potential Candidates</h1>
-      <div className="content">
-        {candidates.length > 0 ? (
-          <div className="candidate-list">
-            {candidates.map((candidate) => (
-              <div key={candidate.id} className="candidate-item">
-                <img src={candidate.avatar_url} alt={candidate.login} />
-                <div className="candidate-info">
-                  <h3>{candidate.name || candidate.login}</h3>
-                  <p>Location: {candidate.location || 'Not specified'}</p>
-                  <p>Email: {candidate.email || 'Not available'}</p>
-                  <p>Company: {candidate.organizations_url || 'Not specified'}</p>
-                </div>
-                <button 
-                  onClick={() => handleRemoveCandidate(candidate.id)} 
-                  className="remove-button"
-                >
-                  -
-                </button>
-              </div>
+    <main className="container">
+      <h1 >Potential Candidates</h1>
+      
+      <div >
+        <table className="table">
+          <thead>
+            <tr className="tr">
+              <th className="p-3 text-left">Image</th>
+              <th className="p-3 text-left">Name</th>
+              <th className="p-3 text-left">Location</th>
+              <th className="p-3 text-left">Email</th>
+              <th className="p-3 text-left">Company</th>
+              <th className="p-3 text-left">Bio</th>
+              <th className="p-3 text-left">Reject</th>
+            </tr>
+          </thead>
+          <tbody>
+            {candidates.map((candidate, index) => (
+              <tr key={candidate.id} >
+                <td className="tbody ">
+                  <img src={candidate.avatar_url} alt={candidate.login} />
+                </td>
+                <td className="tbody">
+                  <div>{candidate.name || candidate.login}</div>
+                  <div >({candidate.login})</div>
+                </td>
+                <td className="tbody ">{candidate.location || 'Not specified'}</td>
+                <td className="tbody ">
+                  <a href={`mailto:${candidate.email}`} >
+                    {candidate.email || 'Not available'}
+                  </a>
+                </td>
+                <td className="tbody ">{candidate.company || 'Not specified'}</td>
+                <td className="tbody ">{candidate.bio || 'No bio available'}</td>
+                <td className="tbody ">
+                  <button className="remove-button"
+                    onClick={() => handleRemoveCandidate(candidate.id)}
+                  >
+                    -
+                  </button>
+                </td>
+              </tr>
             ))}
-          </div>
-        ) : (
-          <h2>No Candidates Yet</h2>
-        )}
+          </tbody>
+        </table>
       </div>
+      
+      {candidates.length === 0 && (
+        <p className="text-center mt-8 text-xl">No Candidates Yet</p>
+      )}
     </main>
   );
 };
