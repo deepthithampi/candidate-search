@@ -67,7 +67,9 @@ const CandidateSearch: React.FC = () => {
   if (!currentCandidate) return <p>No candidates available.</p>;
 
   return (
+    
     <div >
+      <h1>Candidate Search</h1>
     <div className='container-div'>
       <img className='candidate-item img-avatar' src={currentCandidate.avatar_url} alt={`${currentCandidate.name}'s avatar`} />
       <h2 className='candidate-item '>{currentCandidate.name || currentCandidate.login}</h2>
